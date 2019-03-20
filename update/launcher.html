@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Launcher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="launcher.css" />
+</head>
+<body>
+    <div class="transparent"></div>
+    <svg width="600px" height="600px" viewBox="0 0 600 600">
+        <polygon points="20,100 250,10 500,50 600,100 560,400 590,580 500,570 300,540 40,300"  style="fill:white;stroke-width:10;stroke:black;"/>
+        <polygon points="40,400 170,450 110,560 47,480"  style="fill:white;stroke-width:7;stroke:black;"/>
+    </svg>
+    <span id="state">Checking for updates...</span>
+    <div class="loadingBar">
+        <div class="background"></div>
+        <div class="progress"></div>
+    </div>
+    <a href="test/hello.txt" download="true">Download</a>
+
+    <script src="launcher.js"></script>
+    <script src="network.js"></script>
+</body>
+</html>
