@@ -1,0 +1,506 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+    background: rgb(31, 31, 31);
+    font-family: Verdana;
+    color: white;
+    user-select: none;
+}
+
+#app {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 30px;
+}
+
+#app strong {
+    color: rgb(119, 60, 255);
+}
+#app button {
+    color: white;
+    border: 1px solid rgb(61, 61, 61);
+    background: transparent;
+    transform: scale(1.5);
+    font-size: 15px;
+    border-radius: 10px;
+    transition: 0.2s;
+    outline-color: rgb(119, 60, 255);
+}
+#app button:hover {
+    border-color: rgb(119, 60, 255);
+    border-radius: 5px;
+    transform: scale(1.4);
+}
+#app input[type="text"] {
+    border: none;
+    border-bottom: 2px solid rgb(61, 61, 61);
+    border-radius: 0px;
+    outline: none;
+    background: transparent;
+    color: white;
+    transition: 0.2s;
+}
+#app input[type="text"]:focus {
+    border-bottom-color: rgb(119, 60, 255);
+    color: rgb(119, 60, 255);
+}
+#app select {
+    border: 1px dashed rgb(61, 61, 61);
+    background: transparent;
+    color: white;
+    outline: rgb(119, 60, 255);
+}
+#app option {
+    background: rgb(31, 31, 31);
+    outline: rgb(119, 60, 255);
+    border: none;
+}
+
+#app input[type="range"]::-webkit-slider-runnable-track {
+    background: rgb(61, 61, 61);
+    border: 1px solid rgb(119, 60, 255);
+}
+
+#app input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid rgb(119, 60, 255);
+    background: rgb(61, 61, 61);
+    width: 40px;
+    height: 20px;
+    outline: none;
+    border-radius: 10px;
+}
+#app input[type="checkbox"]::after {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: rgb(119, 60, 255);
+    left: 0%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+#app input[type="checkbox"]:checked::after {
+    left: 50%;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-appearance: none;
+    background: rgb(31, 31, 31);
+    border-left: 1px solid rgb(80, 80, 80);
+}
+
+#canvas {
+    border: 5px solid rgb(27, 27, 27);
+    background: black;
+    position: absolute;
+    transition: 0.5s;
+}
+
+
+.createMenu {
+    position: absolute;
+}
+#timeline {
+    border: 1px solid rgb(119, 60, 255);
+    position: absolute;
+    background: rgb(31, 31, 31);
+    transition: 0.1s;
+}
+
+
+.edit {
+    position: absolute;
+    border: 1px solid rgb(23, 0, 78);
+    overflow: hidden;
+}
+
+
+#color {
+    position: absolute;
+}
+#color span {
+    position: absolute;
+}
+#color input[name=color] {
+    position: absolute;
+    transform: translateX(-57.5px) rotate(90deg);
+}
+#color input[type="range"][name=color]::-webkit-slider-runnable-track {
+    appearance: none;
+    background: url(color_slider.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#color input[type="range"][name=color]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid black;
+    background: black;
+    color: blue;
+}
+.player {
+    z-index: 2000;
+    position: absolute;
+}
+.player button {
+    outline: none;
+    z-index: 99;
+}
+
+#playBtn {
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    background: rgb(31, 31, 31);
+}
+
+
+/*.player button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0%;
+    left: 0%;
+    transition: 0.2s;
+    background: rgb(0, 255, 242);
+}
+.player button:hover::before {
+    height: 100%;
+}*/
+
+#delete {
+    position: absolute;
+    color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+    background: rgb(44, 44, 44);
+    transition: 0.5s;
+    transform: scale(1.3);
+}
+
+#delete:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 4px 4px rgba(255, 0, 0, 0.486);
+    border-color: red;
+    color: white;
+    background: red;
+}
+
+.tweenMenu {
+    position: absolute;
+    height: 30px;
+}
+#length {
+    position: absolute;
+}
+#lengthHint {
+    position: absolute;
+}
+#vectorPoint {
+    position: absolute;
+}
+.separator {
+    appearance: none;
+    background: rgb(105, 105, 105);
+    position: absolute;
+    height: 2px;
+}
+.textEditor {
+    position: absolute;
+}
+
+#text {
+    position: absolute;
+}
+#textSize {
+    position: absolute;
+}
+#maxWidth {
+    position: absolute;
+}
+#tweenType {
+    position: absolute;
+}
+#showHideVector {
+    position: absolute;
+}
+#showHideVectorHint {
+    position: absolute;
+}
+#frame {
+    position: absolute;
+}
+#color input[name=alpha] {
+    appearance: none;
+    position: absolute;
+    transform: translateX(-57.5px) rotate(270deg);
+    background-image: url(alpha.png);
+}
+
+#app .project {
+    position: absolute;
+    border: 1px solid rgb(23, 0, 78);
+    overflow: hidden;
+}
+#app .project #openProject {
+    position: absolute;
+    visibility: hidden;
+}
+/*#app .project #openProject {}*/
+#app .project button {
+    position: absolute;
+}
+
+
+/*First media (edit when to change the scale mode)*/
+
+    #timeline {
+        width: 95%;
+        height: 300px;
+        bottom: 1%;
+        left: 2%;
+    }
+    #canvas {
+        width: 960px;
+        height: 540px;
+        left: 40%;
+        top: 1%;
+    }
+    .player {
+        left: 50%;
+        top: 60%;
+        width: 450px;
+        height: 80px;
+    }
+    .edit {
+        left: 2%;
+        top: 1%;
+        width: 570px;
+        height: 540px;
+    }
+    #color {
+        left: 2%;
+        top: 2%;
+        width: 300px;
+        height: 120px;
+    }
+    #color span {
+        left: 2%;
+        top: 100%;
+        width: 100%;
+    }
+    #sb {
+        left: 10px;
+        top: 1px;
+    }
+    #length {
+        left: 2%;
+        top: 32%;
+        width: 300px;
+        height: 20px;
+    }
+    #lengthHint {
+        left: 2%;
+        top: 27%;
+    }
+    .tweenMenu {
+        left: 2%;
+        top: 40%;
+    }
+    #vectorPoint {
+        left: 0%;
+        top: 0%;
+    }
+    #tweenType {
+        left: 0%;
+        top: 100%;
+    }
+    #delete {
+        left: 6%;
+        top: 80%;
+    }
+    .separator {
+        left: 2%;
+        top: 26%;
+        width: 95%;
+    }
+    .textEditor {
+        left: 2%;
+        top: 50%;
+        width: 100%;
+        height: 100px;
+    }
+    #text {
+        left: 0%;
+        top: 0%;
+    }
+    #textSize {
+        left: 0%;
+        top: 30%;
+    }
+    #maxWidth {
+        left: 0%;
+        top: 55%;
+    }
+    #showHideVector {
+        top: 72%;
+        left: 2%;
+    }
+    #showHideVectorHint {
+        top: 68%;
+        left: 2%;
+    }
+    #frame {
+        left: 52%;
+        top: 6%;
+        font-size: 20px;
+        height: 20px;
+        width: 500px;
+    }
+    .project {
+        left: 2%;
+        top: 1%;
+        width: 570px;
+        height: 540px;
+    }
+    .project #saveBtn {
+        left: 5%;
+        top: 3%;
+    }
+    .project #openBtn {
+        left: 25%;
+        top: 3%;
+    }
+
+@media (max-width: 1506px){
+    .edit {
+        width: 350px;
+    }
+    .project {
+        width: 350px;
+    }
+    .project #openBtn {
+        left: 60%;
+    }
+}
+@media (max-width: 1060px) {
+    #timeline {
+        width: 95%;
+        height: 300px;
+        bottom: 1%;
+        left: 2%;
+    }
+    #canvas {
+        width: 768px;
+        height: 432px;
+        left: 23%;
+        top: 1%;
+    }
+    .player {
+        left: 40%;
+        top: 55%;
+        width: 450px;
+        height: 80px;
+    }
+    .edit {
+        left: 2%;
+        top: 1%;
+        width: 210px;
+        height: 600px;
+    }
+    #length {
+        left: 2%;
+        top: 35%;
+        width: 95%;
+        height: 20px;
+    }
+    #lengthHint {
+        left: 2%;
+        top: 27%;
+    }
+    .tweenMenu {
+        left: 2%;
+        top: 40%;
+    }
+    #vectorPoint {
+        left: 0%;
+        top: 0%;
+    }
+    #tweenType {
+        left: 0%;
+        top: 100%;
+    }
+    #delete {
+        left: 7%;
+        top: 80%;
+    }
+    .separator {
+        left: 2%;
+        top: 26%;
+        width: 95%;
+    }
+    .textEditor {
+        left: 2%;
+        top: 50%;
+        width: 100%;
+        height: 100px;
+    }
+    #text {
+        left: 0%;
+        top: 0%;
+    }
+    #textSize {
+        left: 0%;
+        top: 30%;
+    }
+    #maxWidth {
+        left: 0%;
+        top: 55%;
+    }
+    #showHideVector {
+        top: 72%;
+        left: 2%;
+    }
+    #showHideVectorHint {
+        top: 63%;
+        left: 2%;
+    }
+    #frame {
+        left: 52%;
+        top: 6%;
+        font-size: 20px;
+        height: 20px;
+        width: 500px;
+    }
+    .project {
+        left: 2%;
+        top: 1%;
+        width: 210px;
+        height: 600px;
+    }
+    .project #saveBtn {
+        left: calc(50% - 20px);
+        top: 3%;
+    }
+    .project #openBtn {
+        left: calc(50% - 20px);
+        top: 10%;
+    }
+}
+
+
+@media (max-height: 1060px) {
+    .player {
+        top: 60%;
+    }
+}
+@media (max-height: 930px) {
+    .player {
+        top: 67%;
+    }
+}
