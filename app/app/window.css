@@ -1,0 +1,57 @@
+
+#window {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+}
+
+
+
+#window .buttons {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    z-index: 100;
+}
+#window .buttons button {
+    position: absolute;
+    right: 1%;
+    top: 0%;
+    background: rgb(73, 73, 73);
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    z-index: 1000;
+    transition: 0.2s;
+    color: white;
+}
+#window .buttons button:hover {
+    background: rgb(66, 66, 66);
+    z-index: 2000;
+    transform: scale(1.1);
+}
+#window #close:hover {
+    background: red;
+}
+#window .drag {
+    position: absolute;
+    background: transparent;
+    position: absolute;
+    width: calc(100% - 90px);
+    height: 30px;
+    -webkit-app-region: drag;
+    z-index: 1;
+    font-family: arial;
+    color: white;
+    background: rgb(39, 39, 39);
+}
+#window .drag span {
+    position: absolute;
+    font-size: 20px;
+    left: 50%;
+    top: 1%;
+    z-index: -1;
+}
