@@ -45,8 +45,8 @@
     -webkit-app-region: drag;
     z-index: 1;
     font-family: arial;
-    color: white;
-    background: rgb(39, 39, 39);
+    color: rgb(255, 255, 255);
+    background: rgb(82, 82, 82);
 }
 #window .drag span {
     position: absolute;

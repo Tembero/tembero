@@ -184,7 +184,7 @@ timeline.update = () => {
             if (el.frame+el.length > timeline.highest) {
                 timeline.highest = el.frame+el.length;
             };
-            if (el.tween != undefined) {
+            if (el.tween != undefined && el.tween != null) {
                 if (frame >= el.frame && frame <= el.frame+el.length) {
                     el.x = el.tween.type(frame-el.frame, el.tween.start.x, el.tween.end.x-el.tween.start.x, el.length);
                     el.y = el.tween.type(frame-el.frame, el.tween.start.y, el.tween.end.y-el.tween.start.y, el.length);
@@ -217,7 +217,9 @@ timeline.update = () => {
         timeline.selected.text = {};
         timeline.selected.text.content = document.getElementById("text").value;
         timeline.selected.text.size = parseInt(document.getElementById("textSize").value);
-        timeline.selected.text.maxWidth = parseInt(document.getElementById("maxWidth").value);
+        if (!isNaN(document.getElementById("maxWidth").value)) {
+            timeline.selected.text.maxWidth = parseInt(document.getElementById("maxWidth").value);
+        }
         timeline.selected.text.font = "arial";
 
         if (timeline.events.hold) {
@@ -371,7 +373,11 @@ function select(el, i, layer) {
         if (selected.text != undefined) {
             document.getElementById("text").value = selected.text.content;
             document.getElementById("textSize").value = selected.text.size;
-            document.getElementById("maxWidth").value = selected.text.maxWidth;
+            if (selected.text.maxWidth === undefined) {selected.text.maxWidth = 10};
+            
+            if (selected.text.maxWidth != NaN) {
+                document.getElementById("maxWidth").value = selected.text.maxWidth;
+            }
         }
         if (selected.unfinishedTween.strType != undefined) {
             document.getElementById("tweenType").value = selected.unfinishedTween.strType;

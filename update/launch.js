@@ -32,9 +32,12 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
+  mainWindow.loadFile('index.html');
   ipc.on("launch", function(){
-    mainWindow.loadFile('index.html');
     mainWindow.show();
+  })
+  ipc.on("close", function(){
+    mainWindow.close();
   })
   launcher.loadFile('launcher.html');
   // Open the DevTools
@@ -48,6 +51,11 @@ function createWindow () {
     mainWindow = null
   })
 }
+
+ipc.on("update", function(){
+  createWindow();
+})
+
 
 
 

@@ -1,20 +1,8 @@
 const { remote } = require("electron");
-const { dialog } = require("electron");
 const fs = require("fs");
 
 function closeWindow() {
-    let options = {
-        type: "warning",
-        buttons: ["Yes", "No thanks"],
-        message: "Do you wish to save the changes?",
-        title: "Save the changes?",
-    }
-
-    dialog.showMessageBox(remote.getCurrentWindow(), options, function(response) {
-        console.log(response);
-      });
-
-    if (!confirm("Save the changes?")) {
+    if (confirm("Are you sure you want to quit? Progress will not be saved!")) {
         var window = remote.getCurrentWindow();
         window.close();
     }else {
