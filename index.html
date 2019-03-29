@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tembero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link rel="icon" href="t.png">
+</head>
+<body>
+    <span id="error">Sorry, your screen size is too small.</span>
+    <div class="navbar">
+        <a href="index.html" style="left: 25%;">HomePage</a>
+        <a href="vectorframe.html" style="left: 50%;">VectorFrame</a>
+    </div>
+    <div class="top">
+        <span id="title">Free. Easy to use. Customizable.</span>
+    </div>
+    <div class="vectorframe">
+        <span id="name">VectorFrame</span>
+        <span id="description"><strong style="border-bottom: 2px solid rgb(111, 0, 255)">VectorFrame</strong> is a free video tool wich makes it easier to create videos from just editing and animating vectors.</span>
+        <a href="vectorframe.html" id="download">Start Creating</a>
+    </div>
+
+    <div class="news">
+        <h1 id="news">News</h1>
+        <div class="content">
+            <div>
+                <span>Check out VectorFrame!</span>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <span id="name">Tembero</span>
+        <span>Follow us on <a href="">YouTube</a>!</span>
+    </div>
+    <script>
+        window.addEventListener("scroll", function() {
+            if (scrollY >= 90) {
+                document.getElementsByClassName("navbar")[0].style.opacity = "0.7";
+            }else {
+                document.getElementsByClassName("navbar")[0].style.opacity = "1";
+            }
+        }, false);
+    </script>
+</body>
+</html>
