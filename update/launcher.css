@@ -1,0 +1,78 @@
+body {
+    background: transparent;
+    overflow: hidden;
+    margin: 0px;
+    user-select: none;
+    z-index: 1000;
+}
+#state {
+    position: absolute;
+    font-family: arial;
+    left: 25%;
+    top: 25%;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+#status {
+    position: absolute;
+    font-family: arial;
+    left: 25%;
+    top: 35%;
+    font-size: 25px;
+    color: rgb(111, 0, 255);
+}
+.loadingBar {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+}
+.loadingBar div {
+    position: absolute;
+}
+
+.background {
+    background: rgba(0, 0, 0, 0.5);
+    left: 25%;
+    top: 50%;
+    width: 300px;
+    height: 30px;
+}
+.progress {
+    background: rgb(111, 0, 255);
+    left: calc(25% - 3px);
+    top: calc(50% - 1.5px);
+    width: calc(10px - 3px);
+    height: calc(30px - 3px);
+    transition: 0.2s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation-name: progressBar;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    border: 3px solid rgb(119, 60, 255);
+}
+
+@keyframes progressBar {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {border-color: 0.5;}
+}
+
+a {
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.transparent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    background: transparent;
+    z-index: 1;
+    /*-webkit-app-region: drag;*/
+}

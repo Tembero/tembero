@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VectorFrame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="window.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <script src="draw.js"></script>
+</head>
+<body>
+    <div id="window">
+        <div class="drag">
+            <span>VectorFrame</span>
+        </div>
+        <div class="buttons">
+            <button id="close" onclick="closeWindow();" style="right: 0px;">✖</button>
+            <button id="maximize" onclick="maximize()" style="right: 30px; resize: both">◧</button>
+            <button id="minimize" onclick="minimize()" style="right: 60px;"><strong>-</strong></button>
+        </div>
+    </div>
+    <div id="app">
+        <div>
+            <div class="project">
+                <input type="file" id="openProject" accept=".vfp">
+                <button id="openBtn">Open...</button>
+                <button onclick="saveFile();" id="saveBtn">Save As</button>
+            </div>
+
+            <div class="edit" style="display: none;">
+                <canvas id="sb" width="140" height="115"></canvas>
+
+                <div class="separator"></div>
+
+                <span id="lengthHint">Set the <strong>length</strong> of the <strong>clip</strong>.</span>
+                <input type="range" id="length" min="10" max="700">
+
+                <div class="tweenMenu">
+                    <input type="range" name="tween" min="0" max="3" id="vectorPoint">
+                    <select id="tweenType">
+                        <option value="linear">linear</option>
+                        <option value="easeInQuad">Ease in quadratic</option>
+                        <option value="easeOutQuad">Ease out quadratic</option>
+                        <option value="easeInOutQuad">Ease in/out quadratic</option>
+                        <option value="easeInQuad">Ease in quadratic</option>
+                    </select>
+                </div>
+                
+                <div class="textEditor">
+                    <input type="text" id="text">
+                    <input type="range" id="textSize">
+                    <input type="text" id="maxWidth">
+                </div>
+
+                <span id="showHideVectorHint"><strong>Show</strong> or <strong>hide</strong> the <strong>vector2</strong>. Also affects <strong>text</strong>.</span>
+                <input type="checkbox" id="showHideVector" checked>
+
+                <button onclick="remove();" id="delete">DELETE</button>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="player">
+            <button onclick="frame=0;"><<</button>
+            <button onclick="frame-=15"><</button>
+            <button onclick="timeline.play=!timeline.play;" id="playBtn"></button>
+            <button onclick="frame+=15">></button>
+            <button onclick="timeline.play=false;frame=timeline.highest">>></button>
+            <span id="frame"></span>
+        </div>
+        <div class="timelineContainer">
+            <canvas id="timeline" width="1000" height="300"></canvas>
+        </div>
+    </div>
+    <script src="render.js"></script>
+    <script src="main.js"></script>
+    <script src="color.js"></script>
+    <script src="window.js"></script>
+    <script src="save.js"></script>
+</body>
+</html>
