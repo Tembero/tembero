@@ -1,0 +1,100 @@
+body {
+    overflow: hidden;
+    margin: 0px;
+    font-family: arial;
+}
+
+
+.menu {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    top: 25%;
+    border: 5px solid rgb(111, 0, 255);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.menu:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+.menu #title {
+    position: absolute;
+    left: 5%;
+    top: 2%;
+    font-size: 50px;
+}
+
+.menu #list {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    font-size: 30px;
+    width: 70%;
+    height: 70%;
+}
+
+.menu #download {
+    position: absolute;
+    border: 2px solid rgb(111, 0, 255);
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(111, 0, 255);
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: 20px;
+    left: 80%;
+    top: 70%;
+}
+.menu #download:hover {
+    color: white;
+    background: rgb(111, 0, 255);
+    transform: scale(1.1);
+}
+
+
+
+.menu span {
+    position: absolute;
+    color: rgb(111, 0, 255);
+    left: 0%;
+}
+
+.menu #note {
+    position: absolute;
+    left: 5%;
+    bottom: 4%;
+    color: gray;
+}
+
+@media (max-width: 913px) {
+    .menu {
+        top: 10%;
+        height: 80%;
+    }
+}
+@media (max-width: 603px) {
+    .menu {
+        left: 10%;
+        width: 80%;
+    }
+}
+@media (max-width: 603px) {
+    .menu #title {
+        font-size: 30px;
+    }
+    .menu #list {
+        top: 10%;
+        height: 80%;
+    }
+}
+@media (max-height: 371px) {
+    body {
+        display: none;
+    }
+}
+@media (max-width: 350px) {
+    body {
+        display: none;
+    }
+}

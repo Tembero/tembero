@@ -1,0 +1,242 @@
+body {
+    font-family: arial;
+    margin: 0px;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+strong {
+    color: rgb(111, 0, 255);
+}
+
+.navbar {
+    position: fixed;
+    background: rgb(48, 48, 48);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 7%;
+    z-index: 1000;
+    transition: 0.2s;
+}
+.navbar a {
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(111, 0, 255);
+    border-radius: 50px;
+    padding: 6px;
+    font-size: 25px;
+    transition: 0.1s;
+    top: 10%;
+}
+.navbar a:hover {
+    background: rgb(111, 0, 255);
+}
+
+
+.top {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0px;
+    top: 7%;
+    z-index: 0;
+    color: white;
+    background: linear-gradient(rgb(77, 0, 177), rgb(142, 55, 255));
+}
+.top #title {
+    position: absolute;
+    font-size: 50px;
+    left: 10%;
+    top: 30%;
+    animation-name: title;
+    animation-duration: 0.6s;
+}
+
+@keyframes title {
+    0% {opacity: 0; top: 40%;}
+    100% {opacity: 1; top: 30%}
+}
+
+.vectorframe {
+    position: absolute;
+    left: 0%;
+    top: 57%;
+    width: 100%;
+    height: 43%;
+    color: rgb(111, 0, 255);
+    border-left: 5px solid rgb(111, 0, 255);
+    background: white;
+    background-attachment: fixed;
+}
+.vectorframe #name {
+    position: absolute;
+    font-size: 60px;
+    left: 10%;
+    top: 1%;
+}
+.vectorframe #description {
+    position: absolute;
+    left: 12%;
+    top: 40%;
+    width: 50%;
+    color: rgb(75, 75, 75);
+}
+.vectorframe #download {
+    position: absolute;
+    border: 2px solid rgb(111, 0, 255);
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(111, 0, 255);
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: 20px;
+    left: 84.5%;
+    top: 70%;
+}
+.vectorframe #download:hover {
+    color: white;
+    background: rgb(111, 0, 255);
+    transform: scale(1.1);
+}
+
+.news #news {
+    position: absolute;
+    color: white;
+    top: 2%;
+    left: 10%;
+    font-size: 70px;
+    border-bottom: 10px solid rgb(111, 0, 255);
+    transform: skewY(-4deg);
+}
+.news {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(rgb(77, 0, 177), rgb(142, 55, 255));
+    transform: skewY(4deg);
+    z-index: 1;
+}
+.news .content {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    transform: skewY(-4deg);
+    color: white;
+}
+.news .content div {
+    border: 2px solid white;
+    width: 200px;
+    height: 230px;
+    background: rgb(48, 48, 48);
+}
+.news .content div span {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.bottom {
+    position: absolute;
+    left: 0%;
+    top: 177%;
+    width: 100%;
+    height: 40%;
+    background: rgb(48, 48, 48);
+    z-index: 0;
+    color: white;
+}
+.bottom span {
+    font-size: 20px;
+    position: absolute;
+    left: 15%;
+    top: 40%;
+}
+.bottom a {
+    color: red;
+}
+.bottom #name {
+    font-size: 40px;
+    position: absolute;
+    left: 10%;
+    top: 25%;
+}
+
+@media (max-width: 968px) {
+    .vectorframe #download {
+        left: 50%;
+    }
+}
+@media (max-width: 310px) {
+    .vectorframe #description {
+        display: none;
+    }
+}
+@media (max-height: 707px) {
+    .navbar a {
+        padding: 4px;
+        font-size: 20px;
+        top: 20%;
+    }
+    .news .content {
+        left: 10%;
+        top: 40%;
+    }
+}
+@media (max-height: 632px) {
+    .navbar a {
+        padding: 2px;
+        font-size: 18px;
+        top: 20%;
+    }
+}
+@media (max-height: 576px) {
+    .news .content div {
+        height: 200px;
+    }
+    .news .content {
+        top: 30%;
+    }
+    .news #news {
+        top: -10%;
+    }
+    .bottom span {
+        top: 60%;
+    }
+}
+@media (max-height: 429px) {
+    .news .content div {
+        height: 170px;
+    }
+    .news #news {
+        border: none;
+    }
+    .navbar {
+        display: none;
+    }
+}
+
+#error {
+    display: none;
+    position: absolute;
+}
+
+
+@media (max-height: 400px) {
+    :not(span) {
+        display: none;
+    }
+    #error {
+        display: block;
+    }
+}
+@media (max-width: 400px) {
+    :not(span) {
+        display: none;
+    }
+    #error {
+        display: block;
+    }
+}

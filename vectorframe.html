@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tembero - VectorFrame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="app.css" />
+    <link rel="icon" href="t.png">
+</head>
+<body>
+    <div class="menu">
+        <span id="title">VectorFrame</span>
+        <span id="price"></span>
+        <div id="list">
+            <span style="top: 0%">⦁ Plan: <strong>Personal</strong></span>
+            <span style="top: 20%">⦁ Price: <strong>Its free!</strong></span>
+            <span style="top: 40%">⦁ Export: <strong>No</strong></span>
+            <span style="top: 60%">⦁ Automatic Updates: <strong>Yes</strong></span>
+        </div>
+        <span id="note">Please do note that 'VectorFrame' is on it's early devlopment stages.</span>
+        <a href="https://drive.google.com/uc?authuser=0&id=1rOa8DyqttMxpsrQvmnplQu9z9Sc8g_UD&export=download" id="download">Get it!</a>
+    </div>
+    <script>
+        if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+                document.getElementById("download").style.display = "none";
+            }
+    </script>
+</body>
+</html>
